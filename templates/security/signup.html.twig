@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ form_start(form) }}
+    <div class="container">
+        <div class="col-6 offset-3">
+            {{ form_row(form.email,{'attr': {'style': 'color:red'}}) }}
+            <br>
+            {{ form_row(form.password) }}
+            <br>
+            {{ form_row(form.submit) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+{% endblock %}

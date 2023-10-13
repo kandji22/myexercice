@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+    <h1> Hello kandji</h1>
+
+</div>
+{% endblock %}
+  {% block javascripts %}
+      {{ parent() }}
+     <script>
+         $(function (){
+             console.log('doule')
+         })
+     </script>
+  {% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <p>{{ 'Comment tu vas ?'|trans({}, 'en') }}</p>
+
+    <p>{% trans %} am fill good and you {% endtrans %}</p>
+        <p>{{ "hello kandji"|myFilter|raw }}</p>
+<div class="container offset-3 col-6 ">
+    {% for type, messages in app.flashes %}
+        {%  for message in messages %}
+            <div class="alert alert-{{ type }}">
+                <p>{{ message }}</p>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+   {{ 'avantage_list'|trans({
+       'father_name': "boubacar"
+   },'index-page')|raw }}
+<div class="container offset-3 col-6 ">
+    {% for flashes in app.session.flashbag.get('success') %}
+        <div class="alert alert-success">{{ flashes }}</div>
+    {% endfor %}
+</div>
+<div class="example-wrapper">
+    <h1> Hello kandji</h1>
+</div>
+
+<div class="container">
+    <ul>
+        {% for local in app_locals %}
+
+            <li><a href="{{ path( 'change_local', { '_locale' : local } ) }}"> {{ local }} </a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+  {% block javascripts %}
+      {{ parent() }}
+     <script>
+         $(function (){
+             console.log('doule');
+         })
+     </script>
+  {% endblock %}

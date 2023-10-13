@@ -1,0 +1,4 @@
+# translations/messages.fr.yaml
+form:
+  name:
+    label: 'Nom'

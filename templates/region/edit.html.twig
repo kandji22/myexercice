@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RegionController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    {% if is_granted('POST_EDIT',region) %}
+        <h1>Création Région ✅</h1>
+    {% endif %}
+    {{ form_start(form) }}
+    {{ form_row(form.name) }}
+
+    <br>
+    <div id = "data-prototype" data-prototype = '{{ form_row(form.departements.vars.prototype|e('html_attr')) }}'></div>
+    <h1>Ajouter un departement</h1>
+    {{ form_row(form.departements) }}
+    <div id = "place_add_data">
+
+    </div>
+    <button id = "add_departement" class="btn btn-primary">Ajouter Département</button>
+    <br>
+    <br><br>
+
+    <h1>Ajouter Fichier</h1>
+    {{ form_row(form.file) }}
+    <br>
+    <br>
+    {{ form_row(form.submit) }}
+    {{form_end(form) }}
+</div>
+{% endblock %}
+ {% block javascripts %}
+     {{ parent() }}
+     <script>
+      $(function(){
+          let divPrototype =  document.getElementById('data-prototype');
+          let btnAdd = document.getElementById('add_departement');
+          let appendPlace = document.getElementById('place_add_data');
+          let deps = document.querySelectorAll('[id^="region_departements_"]')
+
+          for (dep of deps) {
+              console.log(dep)
+              deletbtn = document.createElement('button');
+              deletbtn.classList.add('btn');
+              deletbtn.classList.add('btn_danger');
+              deletbtn.textContent = "Supprimer";
+              deletbtn.addEventListener('click',function(e){
+                  e.preventDefault();
+                  this.parentElement.parentElement.remove();
+              })
+              dep.append(deletbtn)
+          }
+          let prototype = divPrototype.dataset.prototype
+           let i = 1;
+          //Création prototype
+          btnAdd.addEventListener('click',function (e){
+              e.preventDefault();
+             let newPrototype = prototype.replace(/__name__/g,i)
+              i++
+              $html = document.createElement('html');
+              let deleteBtn = document.createElement('button');
+              deleteBtn.textContent = "Delete"
+              deleteBtn.classList.add('btn')
+              deleteBtn.classList.add('btn_danger')
+              deleteBtn.addEventListener('click',function(e) {
+                  e.preventDefault();
+                  this.parentElement.remove()
+              })
+              $html.innerHTML = newPrototype;
+              $html.append(deleteBtn);
+              appendPlace.append($html)
+          })
+      })
+     </script>
+{% endblock %}

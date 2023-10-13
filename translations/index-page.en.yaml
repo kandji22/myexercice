@@ -1,0 +1,8 @@
+avantage_list:
+  "<p>
+          My family is a rather small one, with only three people,  father_name , {{ mother_name }} and {{ your_name }}.
+           father_name is a doctor. {{ mother_name }} is a middle-school teacher. {{ your_name }} is still a student.
+          {{ mother_name }} is very gentle and soft while {{ father_name }} is a little bit hot-tempered. We love each other very much.
+          Although sometimes we might become angry at one another, very soon we will forget the unpleasant things. We're a happy family, how about you?
+      </p>"
+

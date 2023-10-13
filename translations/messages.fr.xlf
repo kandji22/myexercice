@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="S3I.Q.Z" resname="Your are success">
+        <source>Your are success</source>
+        <target>Tu as réussi</target>
+      </trans-unit>
+      <trans-unit id="z7BFM4X" resname="the langage is changed ">
+        <source>the langage is changed </source>
+        <target> La langue est changé </target>
+      </trans-unit>
+      <trans-unit id="upfjv5D" resname="how are you ?">
+        <source>how are you ?</source>
+        <target>Comment vas tu ?</target>
+      </trans-unit>
+      <trans-unit id="gh5TYqu" resname="am fill good and you">
+        <source>am fill good and you</source>
+        <target>__am fill good and you</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

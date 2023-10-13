@@ -1,0 +1,8 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        region:
+            uri_prefix: /mesfichier
+            upload_destination: '%kernel.project_dir%/public/mesfichier'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
