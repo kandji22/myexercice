@@ -18,7 +18,7 @@ class HomeController extends AbstractController
      */
     public function index(Request $request,TranslatorInterface $translator): Response
     {
-
+//test
         $this->addFlash('success',$translator->trans('Your are success'));
         return $this->render('home/index.html.twig', [
 
